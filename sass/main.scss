@@ -1,0 +1,274 @@
+// base
+@import "partials/_variables.scss";
+@import "partials/_mixin.scss";
+@import "partials/_reset.scss";
+
+//animation
+
+@import "partials/_animation.scss";
+
+// general
+@import "partials/_typography.scss";
+
+// components
+@import "partials/_widgets.scss";
+
+//print styles
+@import "partials/_print.scss";
+
+//social-icons
+@import "partials/_social-icons.scss";
+
+
+* {
+box-sizing: border-box;
+}
+
+*:before, *:after {
+  box-sizing: inherit;
+}
+
+
+html {
+  font-size: 62.5%; 
+  height: 100%;  
+  overflow-scrolling:touch;
+  @include respond-to-max(480) {font-size:52.5%}
+  
+}
+
+body {
+  height: 100%;
+       background:$body-bg-color;
+    color:$text-onbody-color;
+    font-family:$font;
+    font-weight:400;
+    @include fontsize(1.8, 3.4);
+  -webkit-overflow-scrolling:touch;
+  margin:0 0 150px 0;
+}
+
+.popup-bg {
+position:fixed;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+z-index:9999998;
+background: rgba(0,0,0,.8);
+display:none;
+
+
+.popup {
+    position: fixed;
+  width: 320px;
+  transform:translate(-50%,-50%);
+  left: 50%;
+  top: 50%;
+  background:white;
+  z-index:9999999;
+  border-radius:5px;
+  box-shadow:0 0 30px black;
+  padding:80px 20px 60px;
+  text-align: center;
+  
+  @include respond-to-max(480){
+    width: 90%;
+  }
+  
+  a,a:hover,a:visited {color:$color1}
+  
+  .close {
+    position:absolute;
+    top:20px;
+    right:20px;
+    font-size:30px;
+    width:30px;
+    height:30px;
+    font-family:arial;
+    text-align: center;
+    cursor:pointer;
+  }
+}
+  
+  
+
+}
+
+section {
+  padding: 100px 15%;
+  @include clearfix;
+  position:relative;
+  border-left-width:10px;
+  border-left-style:solid;
+  @include respond-to-max(1280) {padding: 100px 25% 100px 10%;}
+  @include respond-to-max(1140) {padding: 100px 5%;}
+  @include respond-to-max(480) {padding: 50px 5%;border-left-width:5px;}
+  &.personal-info {
+  @include respond-to-max(1140) {padding: 0 5% 100px;}
+  }
+}
+
+a {outline:0 none;}
+
+ul {
+  @include reset;
+}
+
+li {
+  @include reset;
+  list-style:none
+  }
+  
+  
+
+.hgroup {
+  text-align:center;
+  @include vertical-align;
+    
+}
+
+.hgroup-inner {
+        
+   text-transform:capitalize; 
+       
+  .name {  
+    @include fontsize(6, 5.6); 
+    padding: 50px 0 0;       
+     
+    @include respond-to-max(380) {@include fontsize(5.6, 5.6);}
+    @include respond-to-max(825) {padding: 50px 135px 0 0;}  
+      
+      }
+  
+  .job-position{ 
+    padding: 10px 0 30px;
+    margin:0 0 50px;
+    border-bottom:5px solid black;
+    line-height:2.4rem;
+  }
+  
+  @include respond-to-min(1140) {display:none;}
+}
+
+.container {
+ 
+  width: 80%;
+  margin:5500px auto 150px;
+  background:$container-bg-color;
+  color:$text-oncontainer-color;
+  box-shadow:0 0 30px rgba(0,0,0,.3);
+  
+    @include respond-to-max(1280) { 
+    margin:5000px auto 0;
+    width:100%;
+    box-shadow: none;
+  }
+  @include respond-to-max(1140) { 
+    margin:0 auto;
+    width:100%;
+    box-shadow: none;
+  }
+  
+
+}
+
+.personal-info {
+  
+  ul {@include clearfix}
+  li {
+    width: 50%;
+    float: left;
+    height: 80px;
+    
+    @include respond-to-max(770) {
+    width: 100%;
+}
+    
+    }
+  
+}
+
+.job {
+  
+  background-position:right top;
+  background-repeat:no-repeat;
+  background-color:transparent;
+  background-size:200px auto;
+  
+  @include respond-to-max(520) {background-size:80px auto;}
+  
+  &.hypertv {
+    background-image:url('#{$imgpath}hypertv.png')
+  }
+  
+    &.neomobile {
+    background-image:url('#{$imgpath}neomobile.png')
+  }
+  
+      &.cliccaqui {
+    background-image:url('#{$imgpath}cliccaqui.jpg')
+  }
+  
+}
+ 
+
+
+.skills {
+  
+ 
+  
+  ul {
+    float: left;
+    width: 25%;
+    @include respond-to-max(700) {width: 50%;min-height:300px;}
+    @include respond-to-max(400) {width: 100%;min-height:1px}
+    
+    li {
+    
+    padding:10px 0 0 0;
+    @include respond-to-max(480) {padding:0;}
+    
+    }// Li
+    
+    h3 {
+      @include respond-to-max(480) {border-bottom:1px solid rgba(0,0,0,.2);padding:0 0 20px; margin: 20px 0 10px;}
+    }//h3
+  } //ul
+} //skills
+
+      .vision {
+      
+      ul {margin:50px 0;
+      @include respond-to-max(480) {margin:25px 0;}
+      }
+      
+      li {list-style:circle;margin:0 0 0 50px;padding:10px 0 10px 20px;
+      
+      @include respond-to-max(480) {margin:0;padding:10px 0;list-style:none;}
+      
+      &:first-child {padding:0 0 10px 20px;
+      @include respond-to-max(480) {margin:0;padding:10px 0}
+      }
+      &:last-child {padding:10px 0 0 20px;
+      @include respond-to-max(480) {margin:0;padding:10px 0}
+    }  
+      }
+      
+      a {display: block; }
+      a[href*="stackoverflow"],
+      a[href*="styletil"] {display:inline}
+    }
+    
+    .other {
+      a {
+      
+      display: block;
+      padding:20px 0;
+      
+      }
+    }
+
+
+//touch screen styles
+@import "partials/_touch-or-ie.scss";

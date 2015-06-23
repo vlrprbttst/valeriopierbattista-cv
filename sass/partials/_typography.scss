@@ -1,0 +1,41 @@
+
+
+  h1,
+  h2,
+  h3 {@include reset; font-weight:400;}
+
+  h1 {@include fontsize(4.4, 5.6);}
+  .personal-info h1,
+  .skills h1,
+  .vision h1,
+  .other h1 {margin:0 0 50px}
+  
+  h2 {@include fontsize(3, 4.2);color:#333;margin:50px 0;position:relative;
+  @include respond-to-max(480) {margin:50px 0 30px}
+  
+  span {@include fontsize(1.4, 2.2);display:block;color:#999;border-bottom:1px solid rgba(0, 0, 0, .1);padding: 0 0 50px;
+  
+  @include respond-to-max(480) {padding:0 0 20px}
+  
+  }
+  }
+
+  h3 {@include fontsize(1.8, 1.8);color:#666;clear:left;margin:20px 0;text-decoration: underline;}
+  .skills h3 {text-decoration: none; }
+  
+  b {@include fontsize(1.5, 2);color:#333;display:block; font-weight:700;text-transform: capitalize; }
+  
+  a,
+  a:hover {transition:all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);text-decoration:none;}
+  
+.hgroup {
+  
+  h1 {text-transform:capitalize;@include fontsize(8.4, 2.4);color:#fff}
+  h2 {color:#fff;@include fontsize(2.2, 1);text-transform:capitalize;}
+  
+  color:white;
+  
+  a {color:white;text-decoration:underline;}
+  i {position:static;font-size:inherit;margin:0 5px 0 0}
+  
+}

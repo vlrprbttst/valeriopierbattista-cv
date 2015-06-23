@@ -1,0 +1,22 @@
+html{
+ &.touch,
+ &.ie.ie9,
+ &.ie.ie-legacy { 
+   
+ .animation-wrapper,
+ .thanks {display:none!important}
+ .arrow-up {left:20px}
+ .container {margin:0 auto!important}
+ 
+ 
+}
+
+// ie8 and below (ugh..)
+
+&.ie.ie-legacy {
+.picture,.data {display:none}
+.job.hypertv {background-image:url("#{$imgpath}ie-images/hypertv.png");}
+.job.cliccaqui {background-image:url("#{$imgpath}ie-images/cliccaqui.jpg");}
+.skills {overflow:hidden;}
+}
+}

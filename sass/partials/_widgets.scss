@@ -1,0 +1,117 @@
+
+
+.arrow-up {
+  position:fixed;
+  font-size:72px;
+  bottom: 20px;
+  z-index:999;
+  a {color:$color1;text-shadow:0 5px 0 #eee}
+  a:active {opacity:0.7}
+  
+  @include respond-to-max(1140) {
+display:none;
+  
+  }
+}
+
+.picture {
+  box-sizing:content-box;
+  top:20px;
+  width: 147px;
+  height: 147px;
+  border-radius:50%;
+  position:fixed;
+  right:10%;
+  margin:0 -93.5px 0 0;
+  background:url("#{$imgpath}avatar.png") center center no-repeat;
+  background-size:cover;
+  z-index:1;
+  border-style:solid;
+  border-width:20px;
+  border-color: $color1 $color2 $color3 $color4;
+  
+  
+  @include respond-to-max(1140) {
+    border-width: 5px;
+    height: 120px;
+    margin: 0;
+    position: absolute;
+    right: 5%;
+    top: 20px;
+    width: 120px;
+  }
+  
+  @include respond-to-max(560) {
+    
+    position:relative;
+    top: 20px;
+    margin: 0 auto;
+    
+  }
+}
+ 
+.data {
+  
+  
+  top:227px;
+  width: 220px;
+  height: auto;
+  position:fixed;
+  right:10%;
+  margin:0 -110px 0 0;
+  z-index:1;
+  
+  @include respond-to-max(1140) {
+  
+  position:static;
+  width: 100%;
+  margin:0;
+  }
+
+  
+  a, a:hover {color:white;letter-spacing:1px;display:block;}
+  ul {
+    @include clearfix;
+    text-align: center;
+    @include fontsize(1.6, 3);
+    text-transform: uppercase;
+    
+    li {
+      float: left;
+      width: 100%;
+      padding:10px 0;
+      border-bottom:5px solid darken($color1,5%);
+      margin:5px 0;
+      border-radius:5px;
+      
+      &:first-child {background:$color1;border-bottom:5px solid darken($color1,5%);}
+      &:nth-child(2) {background:$color2;border-bottom:5px solid darken($color2,5%);}
+      &:nth-child(3) {background:$color3;border-bottom:5px solid darken($color3,5%);}
+      &:nth-child(4) {background:$color4;border-bottom:5px solid darken($color4,5%);}
+      &:nth-child(5) {background:$color5;border-bottom:5px solid darken($color5,5%);}
+      &:last-child {background:none;border-bottom:0;padding: 0;margin: 0;height:auto }
+      
+      @include respond-to-max(1140) {
+      
+      width: 20%;
+      margin:0;
+      border-radius:0;
+      &:last-child {
+      width: 100%;
+      
+      }
+      }
+      
+      @include respond-to-max(830) {
+      
+      width: 50%;
+      margin:0;
+      border-radius:0;
+      
+     &:nth-child(5) {width: 100%;}
+      
+      }
+      
+    }//li
+  }//ul
+}//data

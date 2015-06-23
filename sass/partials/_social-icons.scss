@@ -1,0 +1,80 @@
+$color-set-social: (
+
+    twitter: #56A3D9,
+    linkedin: #007BB6,
+    github: #5CE6FF,
+    codepen: #252527
+);
+
+$socialsize:3rem;
+$socialmargin:0.4rem;
+$socialcount:4;
+
+
+@function makelongshadow($color-set-social) {
+  $val: 0px 0px $color-set-social;
+  @for $i from 1 through 50 {
+    $val: #{$val}, #{$i}px #{$i + 1}px #{$color-set-social};
+  }
+  @return $val;
+}
+
+@mixin longshadow($color-set-social) {
+  text-shadow: makelongshadow($color-set-social);
+  
+}
+
+
+    @each $color-class-social, $color-set-social in $color-set-social {
+      
+    .social-cont div.social-box.#{$color-class-social} {
+      background: $color-set-social;
+      i.social-ico {
+        
+            @include longshadow(darken($color-set-social,10%));
+      } 
+    } //social-cont span
+    } //end of loop
+
+
+
+.social-cont {
+  font-size:$socialsize;
+  text-align: center;
+  margin:20px auto;
+  width:($socialsize * 1.5) * ($socialcount) + ($socialmargin * $socialcount * 2) - ($socialmargin * 2);  
+  overflow:auto;
+  
+
+  
+  .social-box {
+    float:left;
+    overflow:hidden;
+    border-radius:$socialsize/6;
+    margin:0 $socialmargin;
+    width:$socialsize*1.5;
+    height:$socialsize*1.5;
+    
+
+    a {
+      display:block;
+      width: 100%;
+      height: 100%;
+
+    }
+    &:first-child {
+      margin-left:0;
+    }
+    
+    &:last-child {
+      margin-right:0;
+    }
+    i {
+    line-height:$socialsize*1.5;
+      }
+  }
+  i.social-ico {
+    color:white;
+    transition:all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}

@@ -1,0 +1,237 @@
+$bgcolor:#34C0A3;
+$printer-color:lightgrey; 
+
+html.no-touch {
+body.loading {
+  
+  
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background: $bgcolor;
+    @include respond-to-max(1140) {#loader-wrapper {display:none;}}
+    
+    p {
+      color: white;
+    height: 50px;
+    left: 50%;
+    line-height: 50px;
+    margin: -155px 0 0 -110px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 240px;
+    font-size:12px
+    }
+}
+
+
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    margin: -80px 0 0 -80px;
+    border-radius: 50%;
+    border-width: 80px;
+    border-style:solid;
+    border-color:$color1 $color2 $color3 $color4;
+    animation: spin 2s linear infinite;
+    z-index:1001;
+}
+
+
+    @keyframes spin {
+        0%   { 
+            transform: rotate(0deg);    
+        }
+        100% {
+            transform: rotate(360deg);    
+        }
+    }
+    @keyframes spin {
+        0%   { 
+            transform: rotate(0deg);    
+        }
+        100% {
+            transform: rotate(360deg);    
+        }
+    }
+    
+
+
+} //body loading
+
+body.loaded {
+  #loader {
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    
+    p {
+    opacity: 0;
+    margin:-155px 0 0 -100px;
+    transition: all 0.3s ease-out;
+    }
+}
+#loader-wrapper {
+    visibility: hidden;
+    opacity:0;
+    transition: all 0.3s 0.3s ease-out;
+}
+} //body loaded
+} //html no-touch
+
+html.touch,
+html.ie {
+  #loader-wrapper {display:none;}
+  
+}
+
+#loader-wrapper {
+  @include respond-to-max(1140){
+  display:none;
+  }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+.animation-wrapper {
+    background:$bgcolor;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    
+    
+    i {position:fixed;bottom:20px;left:50%;font-size:72px;color:white}
+    
+    @include respond-to-max(1140) {display:none!important;}
+    
+}
+
+.paper {
+    width:210px;
+    height:297px;
+    
+    margin:0 0 0 -105px;
+  position: absolute;
+  left: 50%;
+    z-index:3;
+    background: linear-gradient(to right, white 0%,white 50%,#fcfcfc 50%,#fcfcfc 100%);
+
+  }//paper
+  
+  
+    .printed {
+      
+      
+          width:210px;
+    height:297px;
+      background:url('#{$imgpath}printed_cv.png') center center no-repeat #fff;
+      background-size:cover;
+      position: absolute;
+      left: 50%;
+      margin-left: -105px; 
+      z-index:-1;
+      
+      
+    }
+
+.printer-cont {
+
+  width: 600px;
+  height: 600px;
+  position: relative;
+  left:50%;
+  margin:0 0 0 -300px;
+  perspective:510px; 
+  
+  .stand {
+    width: 10px;
+    height:10px;
+    position: absolute;
+    bottom:-4px;
+    
+    &.left {left:20px;background:$printer-color}
+    &.right {right:20px;background:darken($printer-color,5%)}
+  }
+  
+  
+  .backpanel {
+    width: 280px;
+    height: 200px;
+      position: absolute;
+      background: linear-gradient(to right, darken($printer-color,25%) 0%, darken($printer-color,26%) 50%, darken($printer-color,26%) 50%, darken($printer-color,28%) 100%);
+    left:50%;
+    margin:0 0 0 -140px;
+    top:0px;
+    border-radius:8px;
+  }
+  
+  
+  
+  .printer-body {
+    width:442px;
+    height: 130px;
+    background: linear-gradient(to right, $printer-color 0%,$printer-color 50%,darken($printer-color,5%) 50%,darken($printer-color,5%) 100%);
+    border-radius: 15px;
+    position:relative;
+    margin:0 auto;
+    top:80px;
+    z-index:4;
+
+    
+    .hole {
+      width:70%;
+      margin:0 auto;
+      height:20px;
+      border-left:40px solid $printer-color;
+      border-right:40px solid darken($printer-color,5%);
+      position:relative;
+      top:-20px;
+      box-sizing:border-box;
+      box-shadow:0 -5px 0 darken($printer-color, 25%) inset;
+      
+      &.bottom {
+        border:0;
+        top:auto;
+        bottom:-100px;
+        background:darken($bgcolor,5%);
+        border-radius:3px;
+        box-shadow:none;
+        height:10px;
+        border-radius:3px 3px 0 0;
+        box-shadow:0 3px 5px darken($bgcolor,5%);
+      }
+
+    }
+    
+    .light {
+      width: 10px;
+      height: 10px;
+      background:$bgcolor;
+      border-radius:50%;
+      position:absolute;
+      z-index:2;
+      top:10px;
+      right:10px;
+    }
+  }
+  
+}

@@ -1,0 +1,36 @@
+// general variables
+
+$body-bg-color:#f7f7f7;
+$text-onbody-color:#000;
+$container-bg-color:#fff;
+$text-oncontainer-color:#000;
+$font: 'Merriweather', serif;
+$imgpath: "../images/dist/";
+
+
+// colors with sass map!
+
+$color1:#03A9F4;
+$color2:#FF5252;
+$color3:#8BC34A;
+$color4:#FFCD40;
+$color5:#FF4081;
+
+$color-set: (
+    color1: #03A9F4,
+    color2: #FF5252,
+    color3: #8BC34A,
+    color4: #FFCD40,
+    color5: #FF4081
+); 
+
+    @each $color-class, $the-color in $color-set {
+    .box.#{$color-class} {
+    
+    border-left-color:$the-color;  
+    
+      h1, a {color:$the-color}
+      a:hover {color:darken($the-color,10%);}
+      
+    } //box.#{color} 
+    } //end of loop
