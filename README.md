@@ -1,2 +1,2 @@
-# valeriopierbattista.com-2015
-valeriopierbattista.com website
+# valeriopierbattista.com/cv
+valeriopierbattista online resume
