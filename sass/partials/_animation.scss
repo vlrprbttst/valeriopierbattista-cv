@@ -2,7 +2,7 @@ $bgcolor:#34C0A3;
 $printer-color:lightgrey; 
 
 html.no-touch {
-body.loading {
+
   
   
 #loader-wrapper {
@@ -65,26 +65,6 @@ body.loading {
     }
     
 
-
-} //body loading
-
-body.loaded {
-  #loader {
-    opacity: 0;
-    transition: all 0.3s ease-out;
-    
-    p {
-    opacity: 0;
-    margin:-155px 0 0 -100px;
-    transition: all 0.3s ease-out;
-    }
-}
-#loader-wrapper {
-    visibility: hidden;
-    opacity:0;
-    transition: all 0.3s 0.3s ease-out;
-}
-} //body loaded
 } //html no-touch
 
 html.touch,

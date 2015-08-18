@@ -1,12 +1,6 @@
 (function() {
 
-	setTimeout(function() {
-		$('body').addClass('loaded');
-	}, 2500);
 
-	setTimeout(function() {
-		$('body').removeClass('loading');
-	}, 3500);
 
 	var $html = $("html:not(.ie)");
 
