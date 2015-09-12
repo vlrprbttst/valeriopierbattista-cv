@@ -199,6 +199,10 @@ li {
   
   @include respond-to-max(520) {background-size:80px auto;}
   
+    &.doing {
+    background-image:url('#{$imgpath}doing.png')
+  }
+  
   &.hypertv {
     background-image:url('#{$imgpath}hypertv.png')
   }
